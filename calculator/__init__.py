@@ -3,13 +3,20 @@ from calculator.operations import add, subtract, multiply, divide
 from calculator.calculation import Calculation
 from decimal import Decimal
 from typing import Callable
+from calculator.logger import logger  # Import logger
 
 class Calculator:
     @staticmethod
     def _perform_operation(a: Decimal, b: Decimal, operation: Callable[[Decimal, Decimal], Decimal]) -> Decimal:
-        calculation = Calculation.create(a, b, operation)
-        Calculations.add_calculation(calculation)
-        return calculation.perform()
+        try:
+            calculation = Calculation.create(a, b, operation)
+            Calculations.add_calculation(calculation)
+            result = calculation.perform()
+            logger.info(f"Operation performed: {calculation}")
+            return result
+        except Exception as e:
+            logger.error(f"Failed operation: {a} {operation.__name__} {b} - {str(e)}")
+            raise e
 
     @staticmethod
     def add(a: Decimal, b: Decimal) -> Decimal:

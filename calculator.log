@@ -1,0 +1,29 @@
+2025-03-04 02:26:19,021 - INFO - Executed plugin: addition_plugin(2.0, 3.0) = 5.0
+2025-03-04 02:26:19,035 - INFO - Plugin execution completed successfully.
+2025-03-04 02:27:37,626 - ERROR - Invalid number of arguments provided.
+2025-03-04 02:27:48,018 - INFO - Performed calculation: 1 add 2 = 3
+2025-03-04 02:27:48,018 - INFO - Operation performed: Calculation(1, 2, add)
+2025-03-04 02:27:48,018 - INFO - Success: 1 add 2 = 3
+2025-03-04 02:28:13,535 - ERROR - Attempted to divide by zero
+2025-03-04 02:28:13,535 - ERROR - Error in calculation: 1 divide 0 - Cannot divide by zero
+2025-03-04 02:28:13,535 - ERROR - Failed operation: 1 divide 0 - Cannot divide by zero
+2025-03-04 02:28:13,535 - ERROR - Unexpected error: Cannot divide by zero
+Traceback (most recent call last):
+  File "/Users/mickeymouse/projects2025/homework6/calculator_main.py", line 21, in compute_and_display
+    result = operation(a_decimal, b_decimal)
+  File "/Users/mickeymouse/projects2025/homework6/calculator/__init__.py", line 35, in divide
+    return Calculator._perform_operation(a, b, divide)
+  File "/Users/mickeymouse/projects2025/homework6/calculator/__init__.py", line 19, in _perform_operation
+    raise e
+  File "/Users/mickeymouse/projects2025/homework6/calculator/__init__.py", line 14, in _perform_operation
+    result = calculation.perform()
+  File "/Users/mickeymouse/projects2025/homework6/calculator/calculation.py", line 23, in perform
+    raise e
+  File "/Users/mickeymouse/projects2025/homework6/calculator/calculation.py", line 18, in perform
+    result = self.operation(self.a, self.b)
+  File "/Users/mickeymouse/projects2025/homework6/calculator/operations.py", line 16, in divide
+    raise ValueError("Cannot divide by zero")
+ValueError: Cannot divide by zero
+2025-03-04 02:28:35,267 - INFO - Performed calculation: 1 subtract 2 = -1
+2025-03-04 02:28:35,267 - INFO - Operation performed: Calculation(1, 2, subtract)
+2025-03-04 02:28:35,267 - INFO - Success: 1 subtract 2 = -1
