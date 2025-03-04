@@ -19,7 +19,7 @@ def compute_and_display(a, b, operation_name):
 
         if operation:
             result = operation(a_decimal, b_decimal)
-            message = f"The result of {a} {operation_name} {b} = {result}"
+            message = f"The result of {a} {operation_name} {b} is equal to {result}"
             print(message)
             logger.info(message)  # Log successful operations
         else:
