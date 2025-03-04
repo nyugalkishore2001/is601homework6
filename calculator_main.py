@@ -19,7 +19,7 @@ def compute_and_display(a, b, operation_name):
 
         if operation:
             result = operation(a_decimal, b_decimal)
-            message = f"Success: {a} {operation_name} {b} = {result}"
+            message = f"The result of {a} {operation_name} {b} = {result}"
             print(message)
             logger.info(message)  # Log successful operations
         else:
@@ -36,7 +36,7 @@ def compute_and_display(a, b, operation_name):
         print(error_message)
         logger.error(error_message)  # Log division by zero errors
     except Exception as e:
-        error_message = f"Unexpected error: {e}"
+        error_message = f"An error occurred: {e}"
         print(error_message)
         logger.exception(error_message)  # Log unexpected errors with stack trace
 
